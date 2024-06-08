@@ -19,14 +19,14 @@ namespace MultiShop.Discount.Controllers
         [HttpGet]
         public async Task<IActionResult> DiscountCouponList()
         {
-            var values = _discountService.GetAllCouponAsync();
+            var values = await _discountService.GetAllCouponAsync();
             return Ok(values);
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetDiscountCouponById(int id)
         {
-            var values = _discountService.GetByIdCouponAsync(id);
+            var values = await _discountService.GetByIdCouponAsync(id);
             return Ok(values);
         }
 
