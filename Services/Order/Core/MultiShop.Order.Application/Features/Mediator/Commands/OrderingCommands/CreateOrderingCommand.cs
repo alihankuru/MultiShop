@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MultiShop.Order.Application.Features.Mediator.Results.OrderingResults
+namespace MultiShop.Order.Application.Features.Mediator.Commands.OrderingCommands
 {
-    public class GetOrderingQueryResult
+    public class CreateOrderingCommand : IRequest
     {
-        public int OrderingId { get; set; }
         public string UserId { get; set; }
         public decimal TotalPrice { get; set; }
         public DateTime OrderDate { get; set; }

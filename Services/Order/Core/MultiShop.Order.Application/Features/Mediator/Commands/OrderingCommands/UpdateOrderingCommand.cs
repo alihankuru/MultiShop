@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MultiShop.Order.Application.Features.Mediator.Results.OrderingResults
+namespace MultiShop.Order.Application.Features.Mediator.Commands.OrderingCommands
 {
-    public class GetOrderingQueryResult
+    public class UpdateOrderingCommand : IRequest
     {
         public int OrderingId { get; set; }
         public string UserId { get; set; }
