@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MultiShop.Cargo.DataAccessLayer.Abstract
+namespace MultiShop.Cargo.BusinessLayer.Abstract
 {
-    public interface ICargoOperation : IGenericDal<CargoOperation>
+    public interface ICargoCompanyService:IGenericService<CargoCompany>
     {
+
     }
 }
