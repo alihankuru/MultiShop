@@ -1,0 +1,52 @@
+﻿@model List<ResultSpecialOfferDto>
+@* @model List<MultiShop.DtoLayer.CatalogDtos.SpecialOfferDtos.ResultSpecialOfferDto> *@
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<section class="content container-fluid">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="chart-box">
+                <h4>Bordered Table</h4>
+                <p>Add <code>.table-bordered</code> for borders on all sides of the table and cells.</p>
+                <div class="bs-example" data-example-id="bordered-table">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Başlık</th>
+                                <th>Alt Başlık</th>
+                                <th>Image Url</th>
+                                <th>Sil</th>
+                                <th>Güncelle</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                count++;
+                                <tr>
+                                    <th scope="row">@count</th>
+                                    <td>@item.Title</td>
+                                    <td>@item.SubTitle</td>
+                                    <td>@item.ImageUrl</td>
+                                    <td><a href="/Admin/SpecialOffer/DeleteSpecialOffer/@item.SpecialOfferId" class="btn btn-danger">Sil</a></td>
+                                    <td><a href="/Admin/SpecialOffer/UpdateSpecialOffer/@item.SpecialOfferId" class="btn btn-success">Güncelle</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <a href="/Admin/SpecialOffer/CreateSpecialOffer/" class="btn btn-primary">Yeni Özel Teklif Girişi</a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
