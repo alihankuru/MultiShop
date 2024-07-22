@@ -18,9 +18,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 
 
 builder.Services.AddDbContext<OrderContext>();
-
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 // Add services to the container.
-builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
+
 builder.Services.AddApplicationService(builder.Configuration);
 
 
