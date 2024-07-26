@@ -1,0 +1,44 @@
+﻿@model UpdateProductImageDto
+
+
+@{
+    ViewData["Title"] = "ProductImageDetail";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>ProductImageDetail</h1>
+
+
+<section class="content container-fluid">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="chart-box">
+                <h4>Bordered Table</h4>
+                <p>Add <code>.table-bordered</code> for borders on all sides of the table and cells.</p>
+                <div class="bs-example" data-example-id="bordered-table">
+                    <form method="post">
+                 
+                        <input type="hidden" readonly class="form-control" asp-for="ProductImageID" />
+                        <input type="hidden" readonly class="form-control" asp-for="ProductId" />
+                        <br />
+                        <label>Görsel 1</label>
+                        <input type="text" class="form-control" asp-for="Image1" />
+                        <br />
+                        <label>Görsel 2</label>
+                        <input type="text" class="form-control" asp-for="Image2" />
+                        <br />
+                        <label>Görsel 3</label>
+                        <input type="text" class="form-control" asp-for="Image3" />
+                        <br />
+                        <label>Görsel 4</label>
+                        <input type="text" class="form-control" asp-for="Image4" />
+                        <br />
+                        <button class="btn btn-success">Görselleri Güncelle</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

@@ -8,6 +8,7 @@ namespace MultiShop.WebUI.ViewComponents.ProductDetailViewComponent
 {
     public class _ProductDetailImageSliderComponentPartial : ViewComponent
     {
+
         private readonly IHttpClientFactory _httpClientFactory;
 
         public _ProductDetailImageSliderComponentPartial(IHttpClientFactory httpClientFactory)
@@ -23,9 +24,14 @@ namespace MultiShop.WebUI.ViewComponents.ProductDetailViewComponent
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<GetByIdProductImageDto>(jsonData);
-                return View(values);
+
+                if (values != null)
+                {
+                    return View(values);
+                }
             }
             return View();
+          
         }
 
 
