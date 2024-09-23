@@ -56,5 +56,15 @@ namespace MultiShop.Comment.Controllers
             return Ok("Yorum başarıyla eklendi");
         }
 
+
+        [HttpGet("CommentListByProductId")]
+        public IActionResult CommentListByProductId(string id)
+        {
+            var value =_context.UserComments.Find(id);
+            return Ok(value);
+        }
+
+
     }
+
 }
